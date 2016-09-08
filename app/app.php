@@ -12,6 +12,7 @@
 
     $app->get("/", function() use ($app){
         return $app['twig']->render('home.html.twig');
+
     });
     $app->post('/create_place', function() use ($app){
         $city = new Place($_POST['city']);

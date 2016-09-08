@@ -19,6 +19,12 @@
             array_push($_SESSION['list_of_places'], $this);
         }
 
+        static function getAll()
+        {
+            return $_SESSION['list_of_places'];
+
+        }
+
     }
 
 
