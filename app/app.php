@@ -14,7 +14,9 @@
         return $app['twig']->render('home.html.twig');
     });
     $app->post('/create_place', function() use ($app){
-        return $app['twig']->render('new_city.html.twig');
+        $city = new Place($_POST['city']);
+        $city->save();
+        return $app['twig']->render('new_city.html.twig',array('new_place' =>$city));
     });
 
 

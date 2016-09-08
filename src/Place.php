@@ -14,6 +14,11 @@
             $this->city = $new_city;
         }
 
+        function save()
+        {
+            array_push($_SESSION['list_of_places'], $this);
+        }
+
     }
 
 
