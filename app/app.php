@@ -11,7 +11,7 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__ . '/../views'));
 
     $app->get("/", function() use ($app){
-        return $app['twig']->render('home.html.twig');
+        return $app['twig']->render('home.html.twig', array('list_of_cities' => Place::getAll()));
 
     });
     $app->post('/create_place', function() use ($app){
@@ -19,6 +19,7 @@
         $city->save();
         return $app['twig']->render('new_city.html.twig',array('new_place' =>$city));
     });
+
 
 
     return $app;

@@ -4,6 +4,12 @@
     </head>
     <body>
         <h1>Haloo</h1>
+        {% if list_of_cities is not empty %}
+            {% for current_city in list_of_cities %}
+                <li> {{current_city.getCity}} </li>
+            {% endfor %}
+        {% endif %}
+
         <form action="/create_place" method="post">
             <label for="city">Name a city</label>
             <input id="city" name="city" type="text">
